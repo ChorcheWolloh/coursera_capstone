@@ -4,7 +4,7 @@ const TestimonItem = () => {
     return (
         <div className='testimonItem'>
             <h4>Rating</h4>
-            <img src='' alt='avatar'/>
+            <img src='/placeholder.png' alt='avatar'/>
             <span>Name</span>
             <p>Review text</p>
         </div>
@@ -13,8 +13,9 @@ const TestimonItem = () => {
 
 const Testimonials = () => {
   return (
-    <article>Testimonials
-        <div id='testimonContainer'>
+    <article id='testimonials'>
+        <h2>Testimonials</h2>
+        <div className='testimonContainer'>
             <TestimonItem/>
             <TestimonItem/>
             <TestimonItem/>

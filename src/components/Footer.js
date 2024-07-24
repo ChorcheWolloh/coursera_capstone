@@ -4,16 +4,19 @@ import Nav from './Nav'
 const Footer = () => {
   return (
     <footer>
-        <img/>
-        <div>Doormant Navigation
+        <img src='/placeholder.png' alt=''/>
+        <div>
+            <h4>Doormant Navigation</h4>
             <Nav/>
         </div>
-        <nav>Contact
+        <nav>
+            <h4>Contact</h4>
             <li>Address</li>
             <li>Phone number</li>
             <li>Email</li>
         </nav>
-        <nav>Social Media Links
+        <nav>
+            <h4>Social Media Links</h4>
             <li>Address</li>
             <li>Phone number</li>
             <li>Email</li>

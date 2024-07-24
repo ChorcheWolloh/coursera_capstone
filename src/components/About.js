@@ -13,8 +13,8 @@ const About = () => {
         </p>
       </div>
         <div id='aboutUsImageContainer'>
-            <img src='/placeholder.png' alt='first pic with authors'/>
-            <img src='/placeholder.png' alt='second pic with authors'/>
+            <img src='/Mario and Adrian A.jpg' alt='first pic with authors'/>
+            <img src='/Mario and Adrian B.jpg' alt='second pic with authors'/>
         </div>
     </article>
   )

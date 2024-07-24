@@ -1,3 +1,23 @@
+:root {
+  --primary-color1: #495E57;
+  --primary-color2: #f4ce14;
+  --secondary-color1: #ee9972;
+  --secondary-color2: #fbdabb;
+  --highlight-color1: #edefef;
+  --highlight-color2: #333333;
+}
+
+@font-face {
+  font-family: "Markazi Text Medium";
+  src: url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&display=swap');
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Karla Regular";
+  src: ('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Markazi+Text:wght@400..700&display=swap');
+  font-weight: 400;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -9,28 +29,48 @@ body {
   justify-content: center;
 }
 
+/* #root {
+  width: 60%;
+} */
+
+h1, h2, h4 {
+  font-family: "Markazi Text Medium", sans-serif;
+}
+
+p, span {
+  font-family: "Karla Regular", sans-serif;
+}
+
 header, footer, article {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  padding: 10vh 0;
+  justify-content: space-between;
+  padding: 10vh 250px;
 }
 
-/* make media query for header's navigation  */
-
-/* Redo CSS with Mobile First approach */
-
-#root {
-  width: 70%;
+#heroSection {
+  background-color: var(--primary-color1);
+  display: flex;
+  align-items: flex-start;
+  overflow: visible;
+  height: 250px;
+  margin-bottom: 50px;
 }
 
- img {
-  width: 150px;
+#heroSection img {
+  width: 200px;
+  height: 250px;
+  border-radius: 16px;
 }
 
 .cardContainer, .testimonContainer, #SpecialsTopRow {
   display: flex;
+}
+
+.cardContainer, .testimonContainer {
+  gap: 5%;
+  margin-top: 30px;
 }
 
 #specials, #testimonials {
@@ -40,12 +80,94 @@ header, footer, article {
 
 header > nav li {
   display: inline;
+  text-align: center;
+  padding-left: 10px;
+}
+
+footer > nav, footer > div {
+  list-style: none;
 }
 
 footer {
-  
+  align-items: flex-start;
+}
+
+footer img {
+  width: 100px;
+  height: 200px;
 }
 
 .infoBlock {
   width: 50%;
+}
+
+.productItem {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  background-color: var(--highlight-color1);
+  padding-bottom: 30px;
+}
+
+.productItem > img {
+  width: 100%;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.productItem > p, .cardTopRow, .cardFooter {
+  padding: 15px 10px;
+}
+
+.cardTopRow, #SpecialsTopRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.testimonContainer {
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.testimonContainer img {
+  width: 70px;
+}
+
+.testimonItem {
+  border: 1px solid black;
+  padding: 10px;
+  padding-right: 40px;
+}
+
+.testimonItem > h4 {
+  padding-bottom: 5px;
+}
+
+.testimonItem p {
+  padding-top: 5px;
+}
+
+#aboutUsImageContainer > img {
+  width: 200px;
+  height: 400px;
+}
+
+@media only screen and (max-width: 375px) {
+  .cardContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  #root {
+    width: 100%;
+  }
+  header > nav li {
+    display: block;
+  }
+  .productItem {
+    width: 80%;
+  }
 }

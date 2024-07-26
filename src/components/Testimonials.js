@@ -4,8 +4,10 @@ const TestimonItem = () => {
     return (
         <div className='testimonItem'>
             <h4>Rating</h4>
-            <img src='/placeholder.png' alt='avatar'/>
-            <span>Name</span>
+            <div class='itemInsideContainer'>
+                <img src='/placeholder.png' alt='avatar'/>
+                <p>Name</p>
+            </div>
             <p>Review text</p>
         </div>
     )

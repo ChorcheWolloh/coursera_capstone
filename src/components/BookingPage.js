@@ -1,26 +1,34 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useCallback } from 'react';
 import BookingForm from './BookingForm';
+import {fetchAPI, submitAPI } from './coursera_api.js';
+import { useNavigate } from 'react-router-dom';
 
-// Reducer function to manage availableTimes state
 export const timesReducer = (state, action) => {
   switch (action.type) {
     case 'UPDATE_TIMES':
-      // For now, return the same available times regardless of the date
-      return state; 
+      return fetchAPI(action.payload);
     default:
       return state;
   }
 };
 
-export const initializeTimes = () => [
-  '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'
-];
+export const initializeTimes = () => fetchAPI(new Date()); 
 
 const BookingPage = () => {
   const [availableTimes, dispatch] = useReducer(timesReducer, [], initializeTimes);
+  const navigate = useNavigate();
 
   const handleDateChange = (date) => {
-    dispatch({ type: 'UPDATE_TIMES', payload: date });
+    dispatch({ type: 'UPDATE_TIMES', payload: new Date(date) });
+  };
+
+  const handleSubmit = (formData) => {
+    const isConfirmed = submitAPI(formData);
+
+    if (isConfirmed) {
+      navigate('/confirmed-booking');
+    }
+    return isConfirmed; 
   };
 
   return (
@@ -28,6 +36,7 @@ const BookingPage = () => {
       <BookingForm 
         availableTimes={availableTimes} 
         onDateChange={handleDateChange} 
+        onSubmit={handleSubmit} 
       />
     </article>
   );

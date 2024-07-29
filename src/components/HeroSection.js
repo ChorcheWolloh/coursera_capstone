@@ -1,6 +1,14 @@
-import React from 'react'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 const HeroSection = () => {
+
+  const navigate = useNavigate();
+  const handleButtonClick = () => {
+    navigate('/BookingPage');
+  };
+
   return (
     <article id='heroSection'>
       <div className='infoBlock'>
@@ -8,7 +16,7 @@ const HeroSection = () => {
         <h4>Chicago</h4>
         <p>Little Lemon is a charming neighborhood bistro that serves simple food and classic coctails in a lively but casual environment.
            The restaurant features a locally-sourced menu with daily specials</p>
-        <button>Reserve a Table</button>
+        <button onClick={handleButtonClick}>Reserve a Table</button>
       </div>
     <img src="\restauranfood.jpg" alt=""/>
     </article>

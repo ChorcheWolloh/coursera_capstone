@@ -1,23 +1,38 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const BookingForm = ({ availableTimes, onDateChange }) => {
+const BookingForm = ({ availableTimes, onDateChange, onSubmit }) => {
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState('');
+  const navigate = useNavigate();
 
-  // Handle date change
   const handleDateChange = (e) => {
     const newDate = e.target.value;
     setDate(newDate);
-    onDateChange(newDate); 
+    onDateChange(newDate);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const formData = { date, time, guests, occasion };
+    
+    if (onSubmit) {
+      const isConfirmed = onSubmit(formData);
+
+      if (isConfirmed) {
+        navigate('/confirmedBooking');
+      }
+    }
   };
 
   const today = new Date().toISOString().split('T')[0];
 
   return (
-    <form id="reservationForm">
-       <h4>Book Now</h4>
+    <form id="reservationForm" onSubmit={handleSubmit}>
+      <h4>Book Now</h4>
       <label htmlFor="res-date">Choose date</label>
       <input 
         required
@@ -37,7 +52,7 @@ const BookingForm = ({ availableTimes, onDateChange }) => {
       >
         <option value="">Select a time</option>
         {availableTimes && availableTimes.map((time, index) => (
-          <option key={index} value={time}></option>
+          <option key={index} value={time}>{time}</option>
         ))}
       </select>
       

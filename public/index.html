@@ -5,9 +5,41 @@
     <!-- <link rel="icon" href="%PUBLIC_URL%/favicon.ico" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+    <script>
+const seededRandom = function (seed) {
+  var m = 2**35 - 31;
+  var a = 185852;
+  var s = seed % m;
+  return function () {
+    return (s = s * a % m) / m;
+  };
+};
+
+const fetchAPI = function(date) {
+  let result = [];
+  let random = seededRandom(date.getDate());
+
+  for (let i = 17; i <= 23; i++) {
+    if (random() < 0.5) {
+      result.push(i + ':00');
+    }
+    if (random() < 0.5) {
+      result.push(i + ':30');
+    }
+  }
+  return result;
+};
+
+const submitAPI = function(formData) {
+  return true;
+};
+
+export { fetchAPI, submitAPI };
+
+    </script>
     <meta
-      name="description"
-      content="A Meta Professional Certificate Capstone Project featuring a fully fledged page for a fictional restaurant called Little Lemons"
+    name="description"
+    content="A Meta Professional Certificate Capstone Project featuring a fully fledged page for a fictional restaurant called Little Lemons"
     />
     <meta name="og:title" content="Little Lemon Restaurant"/>
     <meta name="og:image" content="%PUBLIC_URL%/Logo.png"/>

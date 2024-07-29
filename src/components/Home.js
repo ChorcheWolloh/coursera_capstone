@@ -6,7 +6,7 @@ import About from './About.js';
 
 function Home() {
   return (
-    <main>
+    <main id="home">
         <HeroSection/>
         <Specials/>
         <Testimonials/>

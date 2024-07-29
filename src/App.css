@@ -26,11 +26,6 @@
   box-sizing: border-box;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-}
-
 h1, h2, h4 {
   font-family: "Markazi Text Medium", sans-serif;
 }
@@ -46,7 +41,7 @@ header, footer, article {
   padding: 10vh 200px;
 }
 
-button {
+button, #reservationSubmit {
   background-color: var(--highlight-color2);
   border-radius: 5px;
   padding: 13px 20px;
@@ -321,9 +316,40 @@ footer img {
   height: 200px;
 }
 
+/* ----------------------------------------------------RESERVATION FORM---------------------------------------------------- */
+
+#booking {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#reservationForm{
+  display: grid;
+  max-width: 500px;
+  gap: 20px;
+  border: 2px solid var(--primary-color1);
+  margin-bottom: 30px;
+  margin-top: 30px;
+  padding: 20px 50px;
+  border-radius: 16px;
+  background-color: var(--highlight-color1);
+}
+
+#booking h1 {
+  font-size: 40px;
+  font-weight: 300;
+}
+
 /* ----------------------------------------------------MEDIA QUERY---------------------------------------------------- */
 
 @media only screen and (max-width: 375px) {
+
+  body {
+    display: flex;
+    justify-content: center;
+  }
 
   /* HEADER */
 
@@ -360,12 +386,12 @@ footer img {
       padding-right: 0;
     }
 
+    #heroSection .infoBlock h1 {
+      font-size: 34px;
+    }
+
   .infoBlock p {
     font-size: 12px;
-  }
-
-  #heroSection .infoBlock h1 {
-    font-size: 34px;
   }
 
   .infoBlock h4 {
@@ -456,6 +482,12 @@ footer img {
     width: 80px;
     height: 120px;
     margin-right: 10px;
+   }
+
+   /* RESERVATION FORM */
+
+   #booking h1 {
+    font-size: 32px;
    }
 
 }

@@ -283,7 +283,6 @@ header a {
   bottom: 0;
   left: 0;
   z-index: 1; 
-  transform: translate(80px, 0px);
 }
 
 #secondImage {

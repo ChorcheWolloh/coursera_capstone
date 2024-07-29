@@ -1,25 +1,26 @@
 import React from 'react'
+// import { Link } from "react-router";
 
 const Nav = () => {
   return (
     <nav className=''>
         <li>
-          <a href='#'>Home</a>
+          <a href='/'>Home</a>
         </li>
         <li>
-          <a href='#aboutLittleLemon'>About</a>
+          <a href='/About'>About</a>
         </li>
         <li>
-          <a href='#specials'>Menu</a>
+          <a href='/Specials'>Menu</a>
         </li>
         <li>
-          <a href='#heroSection'>Reservations</a>
+          <a href='/ReserveTable'>Reservations</a>
         </li>
         <li>
-          <a href='#specials'>Order Online</a>
+          <a href='/Specials'>Order Online</a>
         </li>
         <li>
-          <a href=''>Login</a>
+          <a href='/'>Login</a>
         </li>
   </nav>
   )

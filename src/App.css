@@ -18,7 +18,7 @@
   font-weight: 400;
 }
 
-/* GENERAL TAG STYLING */
+/* ----------------------------------------------------GENERAL TAG STYLING---------------------------------------------------- */
 
 * {
   padding: 0;
@@ -54,8 +54,7 @@ button {
   border: none;
 }
 
-
-/* HEADER */
+/* ----------------------------------------------------HEADER---------------------------------------------------- */
 
 header {
   padding: 5vh 200px;
@@ -264,22 +263,47 @@ header a {
   padding-bottom: 20px;
 }
 
-#aboutUsImageContainer {
-  position: relative;
-}
-
 #aboutUsImageContainer > img {
   width: 200px;
   height: 250px;
 }
 
-#aboutUsImageContainer:nth-child(0) {
+#aboutUsImageContainer {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+#aboutUsImageContainer img {
   position: absolute;
-  top: 0px;
-  right: 0px;
+  object-fit: cover;
+}
+
+#firstImage {
+  bottom: 0;
+  left: 0;
+  z-index: 1; 
+  transform: translate(80px, 0px);
+}
+
+#secondImage {
+  top: 0;
+  left: 0;
+  transform: translate(80px, 0px);
+  z-index: 2; 
 }
 
 /* ----------------------------------------------------FOOTER---------------------------------------------------- */
+
+footer {
+  align-items: flex-start;
+  background-color: var(--primary-color1);
+  justify-content: space-evenly;
+}
+
+footer h4 {
+  margin-bottom: 20px;
+}
 
 footer > nav, footer > div {
   list-style: none;
@@ -293,35 +317,79 @@ footer, footer > div > nav a {
   color: var(--primary-color2)
 }
 
-footer {
-  align-items: flex-start;
-  background-color: var(--primary-color1);
-}
-
 footer img {
-  width: 100px;
+  width: 150px;
   height: 200px;
 }
-
 
 /* ----------------------------------------------------MEDIA QUERY---------------------------------------------------- */
 
 @media only screen and (max-width: 375px) {
 
   /* HEADER */
+
   header {
     flex-direction: column;
     flex-wrap: wrap;
     font-size: 10px;
   }
+
+  header nav li {
+    padding-left: 10px;
+  }
+
+  header img {
+    padding: 0;
+    padding-bottom: 10px;
+  }
+
   /* HERO SECTION */
 
   #heroSection {
     height: auto;
     justify-content: space-between;
+    flex-direction: column-reverse;
+    height: auto;
+    align-items: center;
   }
 
   /* info block */
+  
+  #heroSection .infoBlock {
+      width: 70%;
+      margin-top: 20px;
+      padding-right: 0;
+    }
+
+  .infoBlock p {
+    font-size: 12px;
+  }
+
+  #heroSection .infoBlock h1 {
+    font-size: 34px;
+  }
+
+  .infoBlock h4 {
+    margin-bottom: 20px;
+  }
+
+  .infoBlock button {
+    margin-top: 20px;
+  }
+  
+  /* containers */
+
+  .cardContainer, .testimonContainer {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  /* items */
+
+  .productItem, .testimonItem {
+    width: 60vw;
+  }
 
   .infoBlock p {
     font-size: 12px;
@@ -352,5 +420,43 @@ footer img {
   .productItem, .testimonItem {
     width: 60vw;
   }
+
+  /* ABOUT US */
+
+  #aboutLittleLemon {
+    height: auto;
+    justify-content: space-between;
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+  }
+
+  #firstImage {
+    transform: none;
+  }
+
+  /* info block */
+  
+  #aboutLittleLemon .infoBlock {
+    width: 70%;
+    margin-top: 20px;
+    padding-right: 0;
+  }
+
+  #aboutLittleLemon .infoBlock h1 {
+    font-size: 34px;
+  }
+
+   /* FOOTER */
+
+   footer {
+    font-size: 12px;
+   }
+
+   footer img {
+    width: 80px;
+    height: 120px;
+    margin-right: 10px;
+   }
 
 }

@@ -10,13 +10,14 @@ const BookingForm = ({ availableTimes, onDateChange }) => {
   const handleDateChange = (e) => {
     const newDate = e.target.value;
     setDate(newDate);
-    onDateChange(newDate); // Dispatch date change to the reducer
+    onDateChange(newDate); 
   };
 
   const today = new Date().toISOString().split('T')[0];
 
   return (
     <form id="reservationForm">
+       <h4>Book Now</h4>
       <label htmlFor="res-date">Choose date</label>
       <input 
         required
@@ -35,10 +36,8 @@ const BookingForm = ({ availableTimes, onDateChange }) => {
         onChange={(e) => setTime(e.target.value)}
       >
         <option value="">Select a time</option>
-        {availableTimes.map((availableTime, index) => (
-          <option key={index} value={availableTime}>
-            {availableTime}
-          </option>
+        {availableTimes && availableTimes.map((time, index) => (
+          <option key={index} value={time}></option>
         ))}
       </select>
       

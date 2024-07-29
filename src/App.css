@@ -337,9 +337,10 @@ footer img {
   background-color: var(--highlight-color1);
 }
 
-#booking h1 {
-  font-size: 40px;
-  font-weight: 300;
+#reservationForm > h4 {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
 }
 
 /* ----------------------------------------------------MEDIA QUERY---------------------------------------------------- */
@@ -486,7 +487,7 @@ footer img {
 
    /* RESERVATION FORM */
 
-   #booking h1 {
+   #booking #reservationForm h4 {
     font-size: 32px;
    }
 

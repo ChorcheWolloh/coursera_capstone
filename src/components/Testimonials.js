@@ -4,7 +4,7 @@ const TestimonItem = ({props}) => {
     return (
         <div className='testimonItem'>
             <h4>{props.rating}</h4>
-            <div class='itemInsideContainer'>
+            <div className='itemInsideContainer'>
                 <img src={props.image} alt='avatar'/>
                 <p>{props.name}</p>
             </div>

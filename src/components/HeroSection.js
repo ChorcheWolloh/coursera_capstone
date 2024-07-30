@@ -16,9 +16,9 @@ const HeroSection = () => {
         <h4>Chicago</h4>
         <p>Little Lemon is a charming neighborhood bistro that serves simple food and classic coctails in a lively but casual environment.
            The restaurant features a locally-sourced menu with daily specials</p>
-        <button onClick={handleButtonClick}>Reserve a Table</button>
+        <button aria-label="Reserve a Table" onClick={handleButtonClick}>Reserve a Table</button>
       </div>
-    <img src="\restauranfood.jpg" alt=""/>
+    <img src="\restauranfood.jpg" alt="picture displaying some restaurant food"/>
     </article>
   )
 }

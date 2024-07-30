@@ -355,6 +355,7 @@ footer img {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  margin-right: 20px;
 }
 
 #booking th, #booking td {
@@ -531,6 +532,15 @@ footer img {
    }
 
    /* RESERVATION FORM */
+
+   #booking {
+    flex-direction: column;
+   }
+
+   #booking table {
+    margin-bottom: 20px;
+    margin-right: 0;
+   }
 
    #booking #reservationForm h4 {
     font-size: 32px;

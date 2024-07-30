@@ -6,7 +6,7 @@ const BookingForm = ({ availableTimes, onDateChange, onSubmit }) => {
   const [time, setTime] = useState('');
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState('');
-  const navigate = useNavigate();
+  const navigate = useNavigate(); 
 
   const handleDateChange = (e) => {
     const newDate = e.target.value;

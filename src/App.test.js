@@ -37,3 +37,66 @@ test('updateTimes returns the same value that is provided by fetchAPI', () => {
   const newState = timesReducer(initialState, action);
   expect(newState).toEqual(newTimes);
 });
+
+test('Date input field has the correct attributes', () => {
+  render(
+    <BrowserRouter>
+      <BookingForm availableTimes={[]} onDateChange={() => {}} onSubmit={() => {}} />
+    </BrowserRouter>
+  );
+  const dateInput = screen.getByLabelText('Choose date');
+  const today = new Date().toISOString().split('T')[0];
+  expect(dateInput).toHaveAttribute('type', 'date');
+  expect(dateInput).toHaveAttribute('id', 'res-date');
+  expect(dateInput).toHaveAttribute('min', today);
+  expect(dateInput).toBeRequired();
+});
+
+test('Time select field has the correct attributes', () => {
+  render(
+    <BrowserRouter>
+      <BookingForm availableTimes={['17:00', '18:00']} onDateChange={() => {}} onSubmit={() => {}} />
+    </BrowserRouter>
+);
+  const timeSelect = screen.getByLabelText('Choose time');
+  expect(timeSelect).toHaveAttribute('id', 'res-time');
+  expect(timeSelect).toBeRequired();
+  expect(timeSelect).toHaveDisplayValue('Select a time');
+});
+
+test('Guests input field has the correct attributes', () => {
+  render(
+    <BrowserRouter>
+      <BookingForm availableTimes={[]} onDateChange={() => {}} onSubmit={() => {}} />
+    </BrowserRouter>
+);
+  const guestsInput = screen.getByLabelText('Number of guests');
+  expect(guestsInput).toHaveAttribute('type', 'number');
+  expect(guestsInput).toHaveAttribute('placeholder', '1');
+  expect(guestsInput).toHaveAttribute('min', '1');
+  expect(guestsInput).toHaveAttribute('max', '10');
+  expect(guestsInput).toHaveAttribute('id', 'guests');
+  expect(guestsInput).toBeRequired();
+});
+
+test('Occasion select field has the correct attributes', () => {
+  render(
+  <BrowserRouter>
+    <BookingForm availableTimes={[]} onDateChange={() => {}} onSubmit={() => {}} />
+  </BrowserRouter>
+);
+  const occasionSelect = screen.getByLabelText('Occasion');
+  expect(occasionSelect).toHaveAttribute('id', 'occasion');
+  expect(occasionSelect).toHaveDisplayValue('Select an occasion');
+});
+
+test('Submit button has the correct attributes', () => {
+  render(
+  <BrowserRouter>
+    <BookingForm availableTimes={[]} onDateChange={() => {}} onSubmit={() => {}} />
+  </BrowserRouter>
+  );
+  const submitButton = screen.getByRole('button', { name: 'Make Your reservation' });
+  expect(submitButton).toHaveAttribute('type', 'submit');
+  expect(submitButton).toHaveAttribute('value', 'Make Your reservation');
+});

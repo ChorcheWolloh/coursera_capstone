@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/coursera_capstone/static/css/main.e244dcec.css",
-    "main.js": "/coursera_capstone/static/js/main.fb84a6ce.js",
+    "main.js": "/coursera_capstone/static/js/main.27ef2b92.js",
     "static/js/919.c7cb87de.chunk.js": "/coursera_capstone/static/js/919.c7cb87de.chunk.js",
     "index.html": "/coursera_capstone/index.html",
     "main.e244dcec.css.map": "/coursera_capstone/static/css/main.e244dcec.css.map",
-    "main.fb84a6ce.js.map": "/coursera_capstone/static/js/main.fb84a6ce.js.map",
+    "main.27ef2b92.js.map": "/coursera_capstone/static/js/main.27ef2b92.js.map",
     "919.c7cb87de.chunk.js.map": "/coursera_capstone/static/js/919.c7cb87de.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e244dcec.css",
-    "static/js/main.fb84a6ce.js"
+    "static/js/main.27ef2b92.js"
   ]
 }
